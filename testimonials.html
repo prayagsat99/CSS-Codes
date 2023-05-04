@@ -1,0 +1,318 @@
+<style>
+ @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  place-items: start;
+  min-height: 100vh;
+  min-height: 100svh;
+  font-family: "Poppins", sans-serif;
+  color: #26273e;
+  padding-block: min(20vh, 3rem);
+}
+@media screen and (min-width: 61.25rem) {
+  body {
+    place-items: center;
+  }
+}
+
+section {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  width: min(90rem, 85%);
+  margin: 0 auto;
+}
+@media screen and (min-width: 61.25rem) {
+  section {
+    column-gap: 5rem;
+  }
+}
+section h1 {
+  grid-column: span 12;
+  text-transform: capitalize;
+  font-size: 2.4rem;
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
+@media screen and (min-width: 61.25rem) {
+  section h1 {
+    font-size: 4rem;
+    margin-bottom: 4rem;
+  }
+}
+section .cards {
+  grid-column: span 12;
+  display: grid;
+  gap: 2rem;
+}
+@media screen and (min-width: 61.25rem) {
+  section .cards {
+    grid-column: span 5;
+  }
+}
+section .cards .card {
+  cursor: pointer;
+  padding: 2em;
+  border-radius: 1rem;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 2.188rem;
+  align-items: center;
+  transition: 0.3s;
+  position: relative;
+  border: 0.094rem solid transparent;
+}
+section .cards .card img {
+  display: block;
+  width: 3.35rem;
+  height: 3.35rem;
+  border-radius: 50%;
+  filter: grayscale(1);
+  transition: 0.5s;
+}
+section .cards .card > div h3 {
+  text-transform: capitalize;
+  font-size: 1.025rem;
+}
+section .cards .card > div p {
+  text-transform: capitalize;
+  color: #767676;
+  font-size: 0.9rem;
+}
+section .cards .card.active {
+  background: #fff;
+  border: 0.094rem solid rgba(15, 23, 42, 0.0784313725);
+}
+section .cards .card.active .gradient {
+  background-image: linear-gradient(to right, rgba(71, 85, 105, 0.0392156863), rgba(157, 12, 178, 0.5411764706), rgba(67, 67, 200, 0.6), rgba(71, 85, 105, 0.0392156863));
+  width: 50%;
+  height: 0.094rem;
+  position: absolute;
+  content: "";
+  bottom: -0.063rem;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0px 0.125rem 0.75rem rgba(67, 67, 200, 0.3019607843);
+}
+section .cards .card.active img {
+  filter: grayscale(0);
+}
+section .content {
+  grid-column: span 12;
+  position: relative;
+  width: 100%;
+  overflow: inherit;
+  margin-top: 2rem;
+}
+@media screen and (min-width: 61.25rem) {
+  section .content {
+    grid-column: span 7;
+    margin-top: 0;
+    height: auto;
+  }
+}
+section .content .contentBox {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+}
+@media screen and (min-width: 61.25rem) {
+  section .content .contentBox {
+    align-items: center;
+  }
+}
+section .content .contentBox .text {
+  padding-bottom: 2rem;
+}
+@media screen and (min-width: 61.25rem) {
+  section .content .contentBox .text {
+    padding-bottom: 0;
+  }
+}
+section .content .contentBox h2 {
+  transition: 0.5s;
+  opacity: 0;
+}
+section .content .contentBox p {
+  transition: 0.5s;
+  opacity: 0;
+  margin-top: 1.25rem;
+}
+section .content .contentBox span {
+  display: inline-block;
+  transition: 0.5s;
+  opacity: 0;
+  margin-top: 0.625rem;
+}
+section .content .contentBox span svg {
+  width: 1.25rem;
+  color: #eca633;
+}
+section .content .contentBox.active h2 {
+  opacity: 1;
+  transition-delay: 0.5s;
+}
+section .content .contentBox.active span {
+  opacity: 1;
+  transition-delay: 0.7s;
+}
+section .content .contentBox.active p {
+  opacity: 1;
+  transition-delay: 0.9s;
+}
+
+body::-webkit-scrollbar {
+  width: 0.8em;
+}
+
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 0.375rem rgba(0, 0, 0, 0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #3f3f3f;
+}
+
+</style>
+
+
+
+<section>
+  <h1>testimonials</h1>
+  <div class="cards">
+    <div class="card active" data-id="content1">
+      <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="">
+      <div>
+        <h3>Elaina</h3>
+        <p>COO, Meta</p>
+      </div>
+      <div class="gradient"></div>
+    </div>
+    <div class="card" data-id="content2">
+      <img src="https://randomuser.me/api/portraits/men/78.jpg" alt="">
+      <div>
+        <h3>Heather</h3>
+        <p>CFO, Slack</p>
+      </div>
+      <div class="gradient"></div>
+    </div>
+    <div class="card" data-id="content3">
+      <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="">
+      <div>
+        <h3>Amy</h3>
+        <p>CEO, Google</p>
+      </div>
+      <div class="gradient"></div>
+    </div>
+  </div>
+  <div class="content">
+    <div class="contentBox active" id="content1">
+      <div class="text">
+        <h2>Great collaboration</h2>
+        <span>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+            <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" />
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+            <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" />
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+            <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" />
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+            <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" />
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+            <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" />
+          </svg>
+        </span>
+        <p>“Planning a wedding can be very stressful when looking for different vendors; Extraordinary Entertainment was by far the best company we contracted. Andrew is a total gem and a true pleasure to work with, he earned my trust quickly and I didn’t have a care in the world when it came to the wedding day. He was very transparent and provided me with all the information I needed well in advance, kept in touch throughout the process, and went over all the details earlier that week to make sure we stayed on the same page. I can’t say enough about how great Extraordinary Entertainment is, throughout the planning process and during the event itself - they never fail to impress!”</p>
+       
+      </div>
+    </div>
+    <div class="contentBox" id="content2">
+      <div class="text">
+        <h2>It was a great experience!</h2>
+        <span>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+            <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" />
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+            <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" />
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+            <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" />
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+            <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" />
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+            <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" />
+          </svg>
+        </span>
+
+        <p>I can't thank the extraordinary Entertainment team enough for how awesome they are. I recently hired Jeff to be our DJ at our Wedding in September and it was such a blast. He was just so easy to work with and really helped me create the vibe I was looking for. Jeff really did help bring together my day, I just wanted a laid back chill wedding with a good beat and great atmosphere and the team delivered. We also added on the Axe throwing and it was such a great decision. It was quite a unique way to really bring everyone at the party together and create just a good time had by all. Everyone from the 10 year old kids, with signed waivers, and the Over 60 crowd gave it a go enjoying the competition and game.
+
+Jeff, you and your team really did help to make our wedding amazing. Thank you!</p>
+        
+      </div>
+    </div>
+    <div class="contentBox" id="content3">
+      <div class="text">
+        <h2>
+          Quickly and Efficiently</h2>
+        <span>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+            <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" />
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+            <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" />
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+            <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" />
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+            <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" />
+          </svg>
+        </span>
+        <p>Our original vendor canceled the morning of our 6:00 wedding! I contacted Extraordinary at 10:00 am and he was able to put a team together, get our background designed and coordinate with our vendor before I even secured the payment!
+The staff was courteous and helpful! I just received the link to download all of the photos taken and we couldn’t be more pleased.
+What an amazing company to complete our wedding!! Would hire them again in a heartbeat!</p>
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<script>
+    let card = document.querySelectorAll(".card");
+let contentBox = document.querySelectorAll(".contentBox");
+
+for (let i = 0; i < card.length; i++) {
+  card[i].addEventListener("mouseover", function () {
+    for (let i = 0; i < contentBox.length; i++) {
+      contentBox[i].className = "contentBox";
+    }
+    document.getElementById(this.dataset.id).className = "contentBox active";
+
+    for (let i = 0; i < card.length; i++) {
+      card[i].className = "card";
+    }
+    this.className = "card active";
+  });
+}
+
+/*inspiration
+https://dribbble.com/shots/10464678-Daily-UI-039-Testimonials
+*/
+
+</script>
